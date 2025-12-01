@@ -1,0 +1,84 @@
+.logo-bodyflex {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto;
+  }
+
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+
+
+body {
+background-color: #f8f9fa;
+}
+
+.card {
+border-radius: 15px;
+border: none;
+}
+
+.card-header {
+background-color: #800000; /* Vino */
+color: white;
+font-size: 1.5rem;
+font-weight: bold;
+}
+
+.btn-primary {
+background-color: #800000; /* Vino */
+border-color: #800000;
+}
+
+.btn-primary:hover {
+background-color: #660000;
+border-color: #660000;
+}
+
+.btn-secondary {
+background-color: #6c757d;
+border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+background-color: #5a6268;
+border-color: #545b62;
+}
+
+.modal-content {
+border-radius: 10px;
+}
+
+.modal-header {
+background-color: #800000; /* Vino */
+color: white;
+font-weight: bold;
+}
+
+.modal-footer .btn-secondary {
+background-color: #6c757d;
+}
+
+.modal-footer .btn-secondary:hover {
+background-color: #5a6268;
+}
+
+.modal-footer .btn-success {
+background-color: #28a745;
+border-color: #28a745;
+}
+
+.modal-footer .btn-success:hover {
+background-color: #218838;
+border-color: #1e7e34;
+}
