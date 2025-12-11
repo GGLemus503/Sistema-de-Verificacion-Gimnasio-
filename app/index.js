@@ -6,13 +6,10 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import { login, register } from "./controller/authenticationController.js";
 import { authenticate, authorize } from "./middleware/authMiddleware.js";
-import { getClientes, agregarCliente } from "./controller/clientesController.js";
+import { getClientes, agregarCliente,actualizarMembresia } from "./controller/clientesController.js";
 import { verificarMembresia, pagoDia } from "./controller/verificadorController.js";
 import { getTotalClientes, getPagosDiaMesActual, getTotalIngresosMensuales, 
          getClientesActivosVsVencidos, actualizarMembresiasVencidas } from "./controller/dashboardController.js";
-
-
-
 
 //Configuracion del Token
 dotenv.config();
@@ -63,7 +60,10 @@ app.get("/configuracion", authenticate, authorize(["admin"]), (req, res) => {
 
 //Rutas de los Clientes
 app.get("/api/clientes", authenticate,authorize(["admin"]), getClientes);
-app.post("api/clientes/agregar", agregarCliente);
+app.post("/api/clientes/agregar", authenticate, authorize(["admin"]), agregarCliente);
+app.put("/api/clientes/actualizar/:id", authenticate, authorize(["admin"]), actualizarMembresia);
+
+
 
 
 //Rutas de la DashBoard
