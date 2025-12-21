@@ -10,6 +10,11 @@ import { getClientes, agregarCliente,actualizarMembresia } from "./controller/cl
 import { verificarMembresia, pagoDia } from "./controller/verificadorController.js";
 import { getTotalClientes, getPagosDiaMesActual, getTotalIngresosMensuales, 
          getClientesActivosVsVencidos, actualizarMembresiasVencidas } from "./controller/dashboardController.js";
+import { getIngresosMensuales } from "./controller/reportesController.js";
+import { getUsuarios } from "./controller/configuracionController.js";
+
+
+
 
 //Configuracion del Token
 dotenv.config();
@@ -84,6 +89,13 @@ app.post("/api/verificar-membresia", authenticate, authorize(["admin"]), verific
 app.post("/api/pago-dia", authenticate, authorize(["admin"]), pagoDia);
 
 
+//Rutas de Reportes
+app.get("/api/reportes/ingresos-mensuales", authenticate, authorize(["admin"]), getIngresosMensuales);
+
+
+//Rutas de Configuracion
+app.get(
+  "/api/configuracion",authenticate, authorize(["admin"]),getUsuarios);
 
 //Ruta Cierre de Sesion
 app.post("/api/logout", (req, res) => {
